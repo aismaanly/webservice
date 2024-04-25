@@ -5,6 +5,15 @@ import sqlite3
 
 app = FastAPI()
 
+app.add_middleware(
+	CORSMiddleware,
+	allow_origins=["*"],
+	allow_credentials=True,
+	allow_methods=["*"],
+	allow_headers=["*"],
+)
+
+
 # FastAPI GET
 @app.get("/")
 def read_root():
